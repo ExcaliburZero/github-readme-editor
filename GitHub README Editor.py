@@ -85,6 +85,12 @@ def code_text():
     print("Code")
     text_box.insert(SEL_FIRST, "'''")
     text_box.insert(SEL_LAST, "'''")
+    
+#Define Link function
+def link_text():
+    print("Link")
+    text_box.insert(SEL_FIRST, "[")
+    text_box.insert(SEL_LAST, "](url)")
 
 #Generate GUI
 theGUI = Tk()
@@ -119,7 +125,9 @@ button_bold_text = Button(theGUI, text = "Bold", command = bold_text, height = 1
 buttons = buttons + 1
 button_italic_text = Button(theGUI, text = "Italic", command = italic_text, height = 1, width = 1).grid(row = 1, column = buttons)
 buttons = buttons + 1
-button_italic_code = Button(theGUI, text = "[ ]", command = code_text, height = 1, width = 1).grid(row = 1, column = buttons)
+button_code_text = Button(theGUI, text = "[ ]", command = code_text, height = 1, width = 1).grid(row = 1, column = buttons)
+buttons = buttons + 1
+button_link_text = Button(theGUI, text = "<>", command = link_text, height = 1, width = 1).grid(row = 1, column = buttons)
 buttons = buttons + 1
 
 #Setup top area
