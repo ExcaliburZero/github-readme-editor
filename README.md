@@ -17,3 +17,4 @@ This is a python program that aids in the editing of README.md files for GitHub 
 - """" = Makes current line a block quote
 - "Bold" = Bolds selected text
 - "Italic" = Italicizes selected text
+- "[ ]" = Displays selected text as code
