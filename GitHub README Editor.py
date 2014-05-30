@@ -26,7 +26,11 @@ def open_file():
     opened_file = open(file_to_open, 'r')
     new_text = opened_file.read()
     opened_file.close()
+    text_box.delete("1.0", END)
     text_box.insert(INSERT, new_text)
+    #Remove blank line added to end of text
+    blank_text_index = text_box.index("end - 1 chars")
+    text_box.delete(blank_text_index, END)
 
 #Define Heading One function
 def heading_one():
