@@ -28,6 +28,12 @@ def heading_three():
     line_begin = text_box.index("insert linestart")
     text_box.insert(line_begin, "###")
 
+#Define Bullet Point function
+def bullet_point():
+    print("Bullet Point")
+    line_begin = text_box.index("insert linestart")
+    text_box.insert(line_begin, "- ")
+
 #Generate GUI
 theGUI = Tk()
 theGUI.geometry("567x550+100+200")
@@ -37,11 +43,13 @@ theGUI.title("GitHub README Editor")
 buttons = 0
 
 #Setup buttons
-button_heading_one = Button(theGUI, text = "H1", command = heading_one, height = 1, width = 1).grid(row = 1, column = 0)
+button_heading_one = Button(theGUI, text = "H1", command = heading_one, height = 1, width = 1).grid(row = 1, column = buttons)
 buttons = buttons + 1
-button_heading_two = Button(theGUI, text = "H2", command = heading_two, height = 1, width = 1).grid(row = 1, column = 1)
+button_heading_two = Button(theGUI, text = "H2", command = heading_two, height = 1, width = 1).grid(row = 1, column = buttons)
 buttons = buttons + 1
-button_heading_three = Button(theGUI, text = "H3", command = heading_three, height = 1, width = 1).grid(row = 1, column = 2)
+button_heading_three = Button(theGUI, text = "H3", command = heading_three, height = 1, width = 1).grid(row = 1, column = buttons)
+buttons = buttons + 1
+button_bullet_point = Button(theGUI, text = "*", command = bullet_point, height = 1, width = 1).grid(row = 1, column = buttons)
 buttons = buttons + 1
 
 #Setup top area
