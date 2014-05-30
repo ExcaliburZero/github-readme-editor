@@ -19,3 +19,6 @@ This is a python program that aids in the editing of README.md files for GitHub 
 - "Italic" = Italicizes selected text
 - "[ ]" = Displays selected text as code
 - "<>" = Adds markup for a link to selected text, "url" can then be replced with the wanted url and the text will then link to the added url
+
+##Screenshot
+[image](screenshot.png)
