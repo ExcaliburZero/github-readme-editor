@@ -10,7 +10,7 @@ Programer: ExcaliburZero / Rocketslime_1_1
 #Imports
 from tkinter import *
 
-#Define svae function
+#Define save function
 def save_file():
     file_to_save = filedialog.asksaveasfilename()
     entered_text = text_box.get("1.0", END)
@@ -56,6 +56,13 @@ def bullet_point():
     line_begin = text_box.index("insert linestart")
     text_box.insert(line_begin, "- ")
 
+#Define Strikethrough function
+def strike_through():
+    print("Strikethrough")
+    line_begin = text_box.index("insert linestart")
+    text_box.insert(SEL_FIRST, "~~")
+    text_box.insert(SEL_LAST, "~~")
+
 #Generate GUI
 theGUI = Tk()
 theGUI.geometry("567x550+100+200")
@@ -80,6 +87,8 @@ buttons = buttons + 1
 button_heading_three = Button(theGUI, text = "H3", command = heading_three, height = 1, width = 1).grid(row = 1, column = buttons)
 buttons = buttons + 1
 button_bullet_point = Button(theGUI, text = "*", command = bullet_point, height = 1, width = 1).grid(row = 1, column = buttons)
+buttons = buttons + 1
+button_strike_through = Button(theGUI, text = "-", command = strike_through, height = 1, width = 1).grid(row = 1, column = buttons)
 buttons = buttons + 1
 
 #Setup top area
