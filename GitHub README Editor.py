@@ -91,6 +91,12 @@ def link_text():
     print("Link")
     text_box.insert(SEL_FIRST, "[")
     text_box.insert(SEL_LAST, "](url)")
+    
+#Define Image function
+def image():
+    print("Image")
+    text_box.insert(SEL_FIRST, "![")
+    text_box.insert(SEL_LAST, "](url)")
 
 #Generate GUI
 theGUI = Tk()
@@ -128,6 +134,8 @@ buttons = buttons + 1
 button_code_text = Button(theGUI, text = "[ ]", command = code_text, height = 1, width = 1).grid(row = 1, column = buttons)
 buttons = buttons + 1
 button_link_text = Button(theGUI, text = "<>", command = link_text, height = 1, width = 1).grid(row = 1, column = buttons)
+buttons = buttons + 1
+button_image = Button(theGUI, text = "?", command = image, height = 1, width = 1).grid(row = 1, column = buttons)
 buttons = buttons + 1
 
 #Setup top area
