@@ -14,3 +14,6 @@ This is a python program that aids in the editing of README.md files for GitHub 
 - "H3" = Adds a level three heading to the current line
 - "*" = Adds a level one bullet point to the current line
 - "-" = Stikes the selected text
+- """" = Makes current line a block quote
+- "Bold" = Bolds selected text
+- "Italic" = Italicizes selected text

@@ -59,9 +59,26 @@ def bullet_point():
 #Define Strikethrough function
 def strike_through():
     print("Strikethrough")
-    line_begin = text_box.index("insert linestart")
     text_box.insert(SEL_FIRST, "~~")
     text_box.insert(SEL_LAST, "~~")
+
+#Define Block Quote function
+def block_quote():
+    print("Block Quote")
+    line_begin = text_box.index("insert linestart")
+    text_box.insert(line_begin, "> ")
+
+#Define Bold function
+def bold_text():
+    print("Bold")
+    text_box.insert(SEL_FIRST, "**")
+    text_box.insert(SEL_LAST, "**")
+
+#Define Italic function
+def italic_text():
+    print("Italic")
+    text_box.insert(SEL_FIRST, "*")
+    text_box.insert(SEL_LAST, "*")
 
 #Generate GUI
 theGUI = Tk()
@@ -89,6 +106,12 @@ buttons = buttons + 1
 button_bullet_point = Button(theGUI, text = "*", command = bullet_point, height = 1, width = 1).grid(row = 1, column = buttons)
 buttons = buttons + 1
 button_strike_through = Button(theGUI, text = "-", command = strike_through, height = 1, width = 1).grid(row = 1, column = buttons)
+buttons = buttons + 1
+button_block_quote = Button(theGUI, text = "\"\"", command = block_quote, height = 1, width = 1).grid(row = 1, column = buttons)
+buttons = buttons + 1
+button_bold_text = Button(theGUI, text = "Bold", command = bold_text, height = 1, width = 1).grid(row = 1, column = buttons)
+buttons = buttons + 1
+button_italic_text = Button(theGUI, text = "Italic", command = italic_text, height = 1, width = 1).grid(row = 1, column = buttons)
 buttons = buttons + 1
 
 #Setup top area
