@@ -10,6 +10,24 @@ Programer: ExcaliburZero / Rocketslime_1_1
 #Imports
 from tkinter import *
 
+#Define svae function
+def save_file():
+    file_to_save = filedialog.asksaveasfilename()
+    entered_text = text_box.get("1.0", END)
+    print("Saving " + file_to_save)
+    opened_file = open(file_to_save, 'w')
+    opened_file.write(entered_text)
+    opened_file.close()
+
+#Define save function
+def open_file():
+    file_to_open = filedialog.askopenfilename()
+    print("Opening " + file_to_open)
+    opened_file = open(file_to_open, 'r')
+    new_text = opened_file.read()
+    opened_file.close()
+    text_box.insert(INSERT, new_text)
+
 #Define Heading One function
 def heading_one():
     print("Heading One")
@@ -39,6 +57,14 @@ theGUI = Tk()
 theGUI.geometry("567x550+100+200")
 theGUI.title("GitHub README Editor")
 
+#Create top level menu buttons
+menubar = Menu(theGUI)
+menubar.add_command(label="Open", command=open_file)
+menubar.add_command(label="Save", command=save_file)
+
+#Display top level menu buttons
+theGUI.config(menu=menubar)
+
 #Setup button counter
 buttons = 0
 
@@ -56,5 +82,6 @@ buttons = buttons + 1
 label_intro = Label(theGUI, text="Welcome to the GitHub README Editor").grid(row = 0, columnspan = buttons)
 
 #Setup text box
+entered_text = StringVar()
 text_box = Text(theGUI, height = 32, undo = 10)
 text_box.grid(row = 2, columnspan = buttons)
