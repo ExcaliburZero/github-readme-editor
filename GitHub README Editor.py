@@ -48,5 +48,5 @@ buttons = buttons + 1
 label_intro = Label(theGUI, text="Welcome to the GitHub README Editor").grid(row = 0, columnspan = buttons)
 
 #Setup text box
-text_box = Text(theGUI, height = 32) #, width = 50)
+text_box = Text(theGUI, height = 32, undo = 10)
 text_box.grid(row = 2, columnspan = buttons)
